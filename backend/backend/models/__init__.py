@@ -1,6 +1,7 @@
 from sqlalchemy import engine_from_config
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import configure_mappers
+from .review import Review
 import zope.sqlalchemy
 
 # Import or define all models here to ensure they are attached to the
@@ -125,3 +126,4 @@ def includeme(config):
         return dbsession
 
     config.add_request_method(dbsession, reify=True)
+
